@@ -1,0 +1,156 @@
+/* style.css - TaskElevate Pro+ UI Theme */
+
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --text-light: #333;
+  --text-dark: #eee;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-bg-dark: rgba(255, 255, 255, 0.05);
+  --primary: #007bff;
+  --high: #ff3c3c;
+  --medium: #ffa500;
+  --low: #28a745;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 50px;
+}
+
+header.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  color: white;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-container {
+  width: 300px;
+  margin: 5rem auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.auth-container input,
+.todo-form input,
+.todo-form textarea,
+.todo-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #0056b3;
+}
+
+.todo-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.todo-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.todo-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s;
+  border-left: 6px solid var(--primary);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.todo-card.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todo-main {
+  margin-bottom: 1rem;
+}
+
+.todo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.todo-card:hover {
+  transform: translateY(-5px);
+}
+
+.priority-high { border-left-color: var(--high); }
+.priority-medium { border-left-color: var(--medium); }
+.priority-low { border-left-color: var(--low); }
+
+input[type="text"], textarea, select {
+  font-size: 1rem;
+}
+
+form[action$="/edit"] button {
+  background: orange;
+}
+form[action$="/delete"] button {
+  background: crimson;
+}
+
+#toggle-theme {
+  font-size: 1.2rem;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
