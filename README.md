@@ -1,5 +1,5 @@
 
-🔗 Python Development Projects – CodSoft Internship
+## Python Development Projects – CodSoft Internship
 
 Welcome to my GitHub repository showcasing the projects I completed during the CodSoft Python Development Internship.
 This internship helped strengthen my Python foundations through hands-on, real-world tasks and project-based learning.
@@ -8,7 +8,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Internship Duration
+## Internship Duration
 
 🗓️ Duration: 4 Weeks
 
@@ -20,9 +20,9 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Task Breakdown
+## Task Breakdown
 
-🔗 Task 1: To-Do List Application 📝
+## Task 1: To-Do List Application 📝
 
 • A command-line based task manager to keep your daily goals organized
 • Add, view, mark complete, and delete tasks
@@ -33,7 +33,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Task 2: Calculator ➕➖✖️➗
+## Task 2: Calculator ➕➖✖️➗
 
 • A simple Python calculator for basic math operations
 • Performs addition, subtraction, multiplication, division
@@ -44,7 +44,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Task 3: Password Generator 🔐
+ ## Task 3: Password Generator 🔐
 
 • A strong and secure password generator built using Python
 • User inputs desired password length
@@ -55,7 +55,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Task 4: Rock-Paper-Scissors Game 🎮
+ ## Task 4: Rock-Paper-Scissors Game 🎮
 
 • A terminal-based game where you play against the computer
 • User selects: Rock, Paper, or Scissors
@@ -67,7 +67,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Task 5: Contact Book 📇
+## Task 5: Contact Book 📇
 
 • A basic digital contact manager using a CLI interface
 • Add, view, search, update, and delete contact details
@@ -78,7 +78,7 @@ Each task improved my problem-solving, logic-building, and command-line interact
 
 ---
 
-🔗 Project Structure
+## Project Structure
 
 Each task is stored in its respective folder with clean and readable code:
 
@@ -98,7 +98,7 @@ Each task is stored in its respective folder with clean and readable code:
 
 ---
 
-🔗 About Me
+## About Me
 
 I’m Madhan Mithra, a passionate and curious 🎓 Computer Science Engineering student who loves exploring the world of Python programming, web development, and tech-driven solutions. 💻💡
 This internship at CodSoft gave me the platform to work on real-life projects, reinforce my theoretical knowledge, and build a strong coding foundation through practice.
@@ -111,7 +111,7 @@ This repository is a reflection of my growth, consistency, and love for programm
 
 ---
 
-🔗 Final Note
+## Final Note
 
 ⭐ Found this helpful or inspiring?
 Star this repo to support my work! 🌟
