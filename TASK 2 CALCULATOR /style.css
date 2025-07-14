@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #111, #1a1a1a);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background 0.5s ease;
+}
+
+.calculator {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 30px #0e0e0e, -10px -10px 30px #2d2d2d;
+  width: 380px;
+  transition: all 0.4s;
+}
+
+input {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 15px;
+  background: #000;
+  color: #0f0;
+  text-align: right;
+  margin-bottom: 20px;
+  box-shadow: inset 5px 5px 10px #0a0a0a, inset -5px -5px 10px #2a2a2a;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  height: 55px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #292929, #1b1b1b);
+  color: #eee;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px #0c0c0c, -4px -4px 10px #292929;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px #0ff;
+}
+
+.equal {
+  grid-column: span 4;
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  color: #111;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  text-align: right;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+body.light {
+  background: #eaeaea;
+}
+
+body.light .calculator {
+  background: #fff;
+  box-shadow: 10px 10px 30px #ccc, -10px -10px 30px #fff;
+}
+
+body.light input {
+  background: #f9f9f9;
+  color: #333;
+}
+
+body.light button {
+  background: linear-gradient(145deg, #eeeeee, #cccccc);
+  color: #111;
+  box-shadow: 4px 4px 10px #bbb, -4px -4px 10px #fff;
+}
+
+body.light .equal {
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+}
