@@ -1,0 +1,154 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: #0a0a0a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #e0f7fa;
+      margin: 0;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(0, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #00ffff, #00bcd4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #e0f7fa;
+      font-size: 1rem;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border: 1px solid #00e5ff;
+      box-shadow: 0 0 10px #00e5ff;
+    }
+
+    button {
+      background: linear-gradient(135deg, #00ffff, #00bcd4);
+      color: black;
+      font-weight: bold;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 15px #00e5ff;
+      transform: scale(1.05);
+    }
+
+    .contact-card {
+      background: rgba(0, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      background: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+    }
+
+    .contact-info p {
+      margin: 4px 0;
+    }
+
+    .contact-info strong {
+      color: #80deea;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 CONTACT HUB</h1>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="phone" placeholder="Phone Number" required />
+      <textarea name="notes" placeholder="Notes..." rows="3"></textarea>
+      <button type="submit">Add Contact</button>
+    </form>
+
+    <div id="contactsList"></div>
+  </div>
+
+  <script>
+    async function loadContacts() {
+      const res = await fetch('/get_contacts');
+      const contacts = await res.json();
+      const container = document.getElementById('contactsList');
+      container.innerHTML = '';
+      contacts.forEach((c) => {
+        const div = document.createElement('div');
+        div.className = 'contact-card';
+        div.innerHTML = `
+          <div class="contact-info">
+            <p><strong>Name:</strong> ${c.name}</p>
+            <p><strong>Email:</strong> ${c.email}</p>
+            <p><strong>Phone:</strong> ${c.phone}</p>
+            <p><strong>Notes:</strong> ${c.notes || "—"}</p>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const res = await fetch('/add_contact', {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+      });
+      if (res.ok) {
+        this.reset();
+        loadContacts();
+      }
+    });
+
+    loadContacts();
+  </script>
+</body>
+</html>
